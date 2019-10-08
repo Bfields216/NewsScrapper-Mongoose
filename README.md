@@ -22,7 +22,6 @@ Express
 Mongoose
 Cheerio
 mLab MongoDB
-Handlebars
 HTML
 Jquery
 CSS
