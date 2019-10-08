@@ -1,20 +1,35 @@
 {
   "name": "mongoose_skeleton",
   "version": "1.0.0",
-  "description": "",
+  "description": "NewsScrapper-Mongoose Week 14 Homework News Scraper!",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "watch": "nodemon server.js"
   },
-  "author": "",
+  "author": "Brandon Fields",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
     "cheerio": "^1.0.0-rc.2",
-    "express": "^4.16.3",
+    "exphbs": "^1.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "handlebars": "^4.4.2",
     "mongoose": "^5.3.16",
     "morgan": "^1.9.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bfields216/NewsScrapper-Mongoose.git"
+  },
+  "keywords": [
+    "Scraper"
+  ],
+  "bugs": {
+    "url": "https://github.com/Bfields216/NewsScrapper-Mongoose/issues"
+  },
+  "homepage": "https://github.com/Bfields216/NewsScrapper-Mongoose#readme"
 }
