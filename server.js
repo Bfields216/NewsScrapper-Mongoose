@@ -126,7 +126,7 @@
 
 var express    = require('express'),
     bodyParser = require('body-parser'),
-    // exphbs     = require('express-handlebars'),
+    exphbs     = require('express-handlebars'),
     logger     = require("morgan");
 
 var PORT = process.env.PORT || 8000;
