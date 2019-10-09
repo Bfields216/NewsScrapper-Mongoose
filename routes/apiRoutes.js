@@ -53,7 +53,7 @@ module.exports = function (app) {
   app.get("/api/fetch", function(req, res){
 // A GET route for scraping the nytimes website
   // First, we grab the body of the html with axios
-  axios.get("https://www.nytimes.com/").then(function(response) {
+  axios.get("https://www.espn.com/").then(function(response) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     const $ = cheerio.load(response.data);
 
@@ -62,9 +62,10 @@ module.exports = function (app) {
 
       // Save an empty result object
       var result = {};
-      result.headline = $(element).find("h2").text().trim();
-      result.url = 'https://www.nytimes.com' + $(element).find("a").attr("href");
+      result.title = $(element).find("h2").text().trim();
+      result.link = 'https://www.espn.com' + $(element).find("a").attr("href");
       result.summary = $(element).find("p").text().trim();
+      
 
       if (result.headline !== '' && result.summary !== ''){
 			db.Article.findOne({headline: result.headline}, function(err, data) {
@@ -72,6 +73,7 @@ module.exports = function (app) {
           console.log(err)
         } else {
           if (data === null) {
+            console.log(`Here is result: ${result}`);
 					db.Article.create(result)
            .then(function(dbArticle) {
              console.log(dbArticle)
